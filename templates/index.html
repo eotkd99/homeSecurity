@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Monitoring</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="fireAlert" style="display: none;">
+        <strong>경고!</strong> 화재가 감지되었습니다!
+    </div>
+
+    <div class="container mt-5">
+        <h1>Home Monitoring</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Current Temperature</h2>
+                <!-- <h3 id="currentTemperature">{{ temperature }}°C</h3> -->
+                <h3 id="currentTemperature">-°C</h3>
+            </div>
+            <div class="col-md-6">
+                <h2>Current Humidity</h2>
+                <!-- <h3 id="currentHumidity">{{ humidity }}%</h3> -->
+                <h3 id="currentHumidity">-%</h3>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <canvas id="temperatureChart"></canvas>
+            </div>
+            <div class="col-md-6">
+                <canvas id="humidityChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <a href="/camera">카메라</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
